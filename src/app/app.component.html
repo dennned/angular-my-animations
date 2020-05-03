@@ -1,8 +1,10 @@
-<div class="wrap">
-  <button (click)="animate()">Animate</button>
+<button (click)="animate()">Animate</button>
   <hr />
+<div class="wrap">
   <div 
     class="box"
     [@box]="boxState"
-  ></div>
+  >
+  {{boxState | uppercase}}
+  </div>
 </div>
