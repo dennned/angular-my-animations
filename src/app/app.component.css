@@ -7,8 +7,8 @@
 
 .box {
   border: 1px solid blue;
-  width: 20px;
-  height: 20px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
