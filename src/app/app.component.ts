@@ -28,11 +28,22 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         })),
         animate(750)
       ]),
+      // void => *
+      transition(':enter',[
+        style({opacity : 0}),
+        animate('850ms ease-out')
+      ]),
+      // * => void
+      transition(':leave',[
+        style({opacity : 1}),
+        animate('750ms ease-in')
+      ]),
     ])
   ]
 })
 export class AppComponent  {
  boxState = 'end'
+ visible = true
 
  animate(){
    this.boxState = this.boxState === 'end' ? 'start' : 'end'
