@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate, group, query } from '@angular/animations';
+import { trigger, state, style, transition, animate, group, query, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'my-app',
@@ -36,8 +36,14 @@ import { trigger, state, style, transition, animate, group, query } from '@angul
       ]),
       // void => *
       transition(':enter',[
-        style({opacity : 0}),
-        animate('850ms ease-out')
+        animate('4s', keyframes([
+          style({background:'red', offset:0}),
+          style({background:'black', offset: 0.2}),
+          style({background:'orange', offset: 0.3}),
+          style({background:'green', offset: 1})
+        ]))
+        //style({opacity : 0}),
+        //animate('850ms ease-out')
       ]),
       // * => void
       transition(':leave',[
